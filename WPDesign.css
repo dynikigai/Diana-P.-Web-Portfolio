@@ -441,53 +441,51 @@ margin-top: 60px;
   color: #fffefe;       /* make it pink to match theme */
 }
 
+/* IDE Icons Wrapper */
 .ide-icons {
   position: relative;
   width: 100%;
-  min-height: 300px; /* give room for free positioning */
+  min-height: 300px; /* default desktop spacing */
 }
 
+/* Logos default (desktop view) */
 .ide-logo {
-  position: absolute;   /* let us move them individually */
+  position: absolute;
   max-width: 70px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Individual placements */
-.logo-vscode {
-  top: -20px;
-  left: -80px;
+/* Individual placements (desktop only) */
+.logo-vscode { top: -20px; left: -80px; }
+.logo-html { top: 40px; left: 60px; }
+.logo-css { top: 160px; left: -30px; }
+.logo-visualstudio { top: 20px; left: 240px; }
+.logo-oracle { top: 150px; left: 160px; }
+.logo-ssms { bottom: -20px; left: 90px; }
+.logo-figma { bottom: 40px; right: 120px; max-width: 50px; }
+
+/* 📱 Responsive Fix: Tablets & Mobile (≤992px) */
+@media (max-width: 992px) {
+  .ide-icons {
+    position: static;         /* disable absolute positioning */
+    min-height: auto;         /* remove forced height */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;                /* spacing between logos */
+  }
+
+  .ide-logo {
+    position: static !important;
+    max-width: 60px;          /* smaller for tablet */
+  }
 }
 
-.logo-html {
-  top: 40px;
-  left: 60px;
-}
-
-.logo-css {
-  top: 160px;
-  left: -30px;
-}
-
-.logo-visualstudio {
-  top: 20px;
-  left: 240px;
-}
-
-.logo-oracle {
-  top: 150px;
-  left: 160px;
-}
-
-.logo-ssms {
-  bottom: -20px;
-  left: 90px;
-}
-
-.logo-figma {
-  bottom: 40px;
-  right: 120px;
-  max-width: 50px;
+/* 📱 Mobile phones (≤576px) */
+@media (max-width: 576px) {
+  .ide-logo {
+    max-width: 50px;          /* shrink more for small phones */
+  }
 }
 
 .soft-skill i {
