@@ -18,19 +18,36 @@
     <!-- Brand -->
     <a class="navbar-brand ps-3 fw-bold" href="#">Web Portfolio</a>
 
-    <!-- Navbar Items -->
-    <ul class="navbar-nav ms-auto me-3 d-flex flex-row align-items-center">
+    <!-- Desktop Nav (visible lg and up) -->
+    <ul class="navbar-nav ms-auto me-3 d-none d-lg-flex flex-row align-items-center">
       <li class="nav-item mx-3"><a class="nav-link active" href="#home">Home</a></li>
       <li class="nav-item mx-3"><a class="nav-link" href="#about">About</a></li>
       <li class="nav-item mx-3"><a class="nav-link" href="#contact">Contact</a></li>
-
-      <!-- Offcanvas Trigger -->
       <li class="nav-item ms-3">
         <button class="btn btn-outline-light px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
           ☰
         </button>
       </li>
     </ul>
+
+    <!-- Mobile Nav Dropdown (visible below lg) -->
+    <div class="dropdown d-lg-none ms-auto me-3">
+      <button class="btn btn-outline-light dropdown-toggle" type="button" id="mobileNavDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        ▼
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end bg-dark text-light" aria-labelledby="mobileNavDropdown">
+        <li><a class="dropdown-item text-light" href="#home">Home</a></li>
+        <li><a class="dropdown-item text-light" href="#about">About</a></li>
+        <li><a class="dropdown-item text-light" href="#contact">Contact</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+          <button class="dropdown-item text-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDark" aria-controls="offcanvasDark">
+            ☰ More
+          </button>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </nav>
 
