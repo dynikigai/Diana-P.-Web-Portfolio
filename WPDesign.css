@@ -249,6 +249,104 @@ html {
 }
 
 /* ---------------------------
+   New: Desktop/Tablet "More" Dropdown Hover
+----------------------------*/
+@media (min-width: 992px) {
+  .nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+/* ===========================
+   Navbar More Dropdown Styling
+   =========================== */
+@media (min-width: 992px) {
+  /* Ensure dropdown floats over other links */
+  .navbar-nav .dropdown-menu {
+    position: absolute;   /* floats above the nav */
+    top: 100%;            /* right below parent */
+    left: 0;              /* align to parent */
+    display: none;        /* hidden by default */
+    margin: 0;            /* remove extra margin */
+    z-index: 1000;        /* ensure above other content */
+    background-color: #343a40; /* match navbar dark */
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    min-width: 180px;
+    padding: 0.5rem 0;
+  }
+
+  /* Dropdown links */
+  .nav-item.dropdown .dropdown-menu .dropdown-item {
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  /* Hover & active links */
+  .nav-item.dropdown .dropdown-menu .dropdown-item:hover,
+  .nav-item.dropdown .dropdown-menu .dropdown-item:focus {
+    color: #F8BBD0 !important;
+    background-color: transparent;
+  }
+
+  /* Remove caret if needed */
+  .nav-item.dropdown > a::after {
+    display: inline-block;
+    margin-left: 0.25rem;
+    vertical-align: 0.1em;
+    content: "▼";
+    font-size: 0.6rem;
+    color: #FFFFFF;
+  }
+
+  /* Hover caret color change */
+  .nav-item.dropdown:hover > a::after {
+    color: #F8BBD0;
+  }
+
+  /* Show dropdown on hover */
+  .navbar-nav .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+/* Mobile dropdown hover style */
+@media (max-width: 991.98px) {
+  .dropdown-menu .dropdown-item:hover,
+  .dropdown-menu .dropdown-item:focus {
+    color: #F8BBD0 !important;
+    background-color: transparent;
+  }
+}
+
+
+/* Social Icons Pink Hover */
+.social-icon i {
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover i {
+  color: #F8BBD0;
+}
+
+.btn-pink {
+  background-color: #F8BBD0;
+  color: #343a40;
+}
+
+.btn-pink:hover {
+  background-color: #eaa6c0;
+  color: #343a40;
+}
+
+
+
+/* ---------------------------
    Education Section (Flip Cards)
 ----------------------------*/
 html, body {
